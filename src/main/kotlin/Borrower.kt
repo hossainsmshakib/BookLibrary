@@ -1,0 +1,1 @@
+class Borrower(var borrowerId: Int, var borrowerName: String, var borrowerAge: Int)

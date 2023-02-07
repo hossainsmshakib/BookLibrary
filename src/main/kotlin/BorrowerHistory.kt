@@ -1,0 +1,1 @@
+class BorrowerHistory(var bookId: Int, var borrowerId: Int)
