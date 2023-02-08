@@ -1,53 +1,37 @@
-//private val Int.bookId: Int
-//    get() {return bookId}
-//
-//fun createBorrowerHistory(books: Int, borrower: Borrower): BorrowerHistory {
-//    return BorrowerHistory(books.bookId, borrower.borrowerId)
-//}
-
-fun getBorrowerHistory(books: List<Books>, borrowers: List<Borrower>): List<BorrowerHistory> {
+fun createBorrowerHistory(books: List<Books>, borrowers: List<Borrower>, newList: List<Int>): MutableMap<Int, Int> {
     val borrowerHistory = mutableListOf<BorrowerHistory>()
-    for (book in books) {
-        for (borrower in borrowers) {
-            // Check if borrower has borrowed the book
-            if (borrower.borrowerId == book.bookId) {
-                borrowerHistory.add(BorrowerHistory(book.bookId, borrower.borrowerId))
-                break
+    val result = mutableMapOf<Int, Int>()
+    var currentBook = 0
+    for (userId in newList) {
+        val borrower = borrowers.firstOrNull { it.borrowerId == userId }
+        if (borrower != null) {
+            if (currentBook >= books.size) {
+                continue
             }
+            borrowerHistory.add(BorrowerHistory(books[currentBook].bookId, borrower.borrowerId))
+            result[userId] = books[currentBook].bookId
+            currentBook++
         }
     }
-    return borrowerHistory
+    return result
 }
-fun main(args: Array<String>) {
+fun main() {
+    // create dummy of books
     val books = mutableListOf<Books>()
-    for (i in 1..5) {
+    for (i in 1..50) {
         books.add(Books(i, "Book $i", "Author $i"))
     }
 
-    val borrowers = listOf(
-        Borrower(1, "Borrower 1", 21),
-        Borrower(2, "Borrower 2", 22),
-        Borrower(3, "Borrower 3", 23)
-    )
+    // borrower list without loop
+    val borrowers = mutableListOf<Borrower>()
+    for (i in 1..5) {
+        borrowers.add(Borrower(i, "Borrower Name $i", i + 20))
+    }
 
-//    val borrowerHistory = mutableListOf<BorrowerHistory>()
-//    for (book in books) {
-//        for (borrower in borrowers) {
-//            // Check if borrower has borrowed the book
-//            if (borrower.borrowerId == book.bookId) {
-//                borrowerHistory.add(BorrowerHistory(book.bookId, borrower.borrowerId))
-//            }
-//            else {
-//                continue
-//            }
-//        }
-//    }
-//    for (history in borrowerHistory) {
-////      println("Borrower History: $borrowerHistory")
-//        println("BookId: ${history.bookId} BorrowerId: ${history.borrowerId}")
-//    }
-    val borrowerHistory = getBorrowerHistory(books, borrowers)
-    for (history in borrowerHistory) {
-        println("BookId: ${history.bookId} BorrowerId: ${history.borrowerId}")
+    val newList = listOf(100, 56, 5, 1, 2, 4, 25, 3, 1000)
+    val borrowerHistory = createBorrowerHistory(books, borrowers, newList)
+    for ((userId, bookId) in borrowerHistory) {
+        println("BookId: $bookId assigned to UserId: $userId ")
     }
 }
+
