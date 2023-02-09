@@ -1,11 +1,11 @@
 # BookLibrary
 Task 1:
-1. Create 3 classes named as,
-2. Class Books (bookId, bookName, authorName)
-   Class Borrower (borrowerId, borrowerName, borrowerAge)
-   Class BorrowerHistory (bookId, borrowerId)
-3. Then create 5 dummy variables using for loop.
-4. Lastly create a method which accept books and borrower class. From where we can get borrowerId and bookId and print it in a new list.
+1. Create 3 classes named as:\
+   Class Books (bookId, bookName, authorName)\
+   Class Borrower (borrowerId, borrowerName, borrowerAge)\
+   Class BorrowerHistory (bookId, borrowerId)\
+2. Then create 5 dummy variables using for loop.
+3. Lastly create a method which accept books and borrower class. From where we can get borrowerId and bookId and print it in a new list.
 
 Task 2:
 1. Check if a user exists or not.
