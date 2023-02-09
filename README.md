@@ -9,7 +9,7 @@ Task 1:
 
 Task 2:
 1. Check if a user exists or not.
-2. Create a list of userId (5 user id, create without loop). 
+2. Create a list of newUserId. 
 3. If exist then create history
    else continue.
 
