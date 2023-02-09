@@ -3,7 +3,7 @@ Task 1:
 1. Create 3 classes named as:\
    Class Books (bookId, bookName, authorName)\
    Class Borrower (borrowerId, borrowerName, borrowerAge)\
-   Class BorrowerHistory (bookId, borrowerId)\
+   Class BorrowerHistory (bookId, borrowerId)
 2. Then create 5 dummy variables using for loop.
 3. Lastly create a method which accept books and borrower class. From where we can get borrowerId and bookId and print it in a new list.
 
@@ -13,6 +13,7 @@ Task 2:
 3. If exist then create history
    else continue.
 
+Example:\
 BookId | BorrowerId | NewUserID |
 | ------- | --- | --- |
 1 | 1 | 10 |
