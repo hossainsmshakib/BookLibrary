@@ -13,7 +13,7 @@ Task 2:
 3. If exist then create history
    else continue.
 
-Example:\
+Example:
 BookId | BorrowerId | NewUserID |
 | ------- | --- | --- |
 1 | 1 | 10 |
