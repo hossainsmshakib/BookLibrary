@@ -22,5 +22,5 @@ BookId | BorrowerId | NewUserID |
 5 | 5 |  |
 
 Output:
-BookId: 3 assigned to UserId: 2
+BookId: 3 assigned to UserId: 2\
 BookId: 4 assigned to UserId: 3
